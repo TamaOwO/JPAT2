@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/commons/taglib.jsp"%>
 <form action="<c:url value="/admin/video/insert"/>" method="post" enctype="multipart/form-data">
+
     <label for="title">Video Title:</label><br>
     <input type="text" id="title" name="title"><br>
 
@@ -24,6 +25,9 @@
             <option value =${cate.categoryid}>${cate.categoryname}</option>
         </c:forEach>
     </select><br>
+
+    <label for="views">Views:</label><br>
+    <input type="text" id="views" name="views"><br>
 
     <label for="active">Active:</label><br>
 

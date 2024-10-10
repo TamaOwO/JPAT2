@@ -25,7 +25,7 @@
         <tr>
             <td>${STT.index+1 }</td>
 
-            <td>${video.videoid }</td>
+            <td>${video.videoId }</td>
             <td>${video.category.categoryname }</td>
 
 
@@ -50,8 +50,8 @@
             </td>
 
 
-            <td><a href="<c:url value='/admin/video/edit?id=${video.videoid }'/>">Sửa</a>
-                | <a href="<c:url value='/admin/video/delete?id=${video.videoid }'/>">Xóa</a>
+            <td><a href="<c:url value='/admin/video/edit?id=${video.videoId }'/>">Sửa</a>
+                | <a href="<c:url value='/admin/video/delete?id=${video.videoId }'/>">Xóa</a>
             </td>
         </tr>
 

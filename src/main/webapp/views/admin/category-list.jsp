@@ -21,6 +21,7 @@
                 <c:url value="/image?fname=${cate.images}" var="imgUrl"></c:url>
             </c:if>
             <td><img height="150" width="200" src="${imgUrl}" /></td>
+
             <td>${cate.categoryname }</td>
             <td>
                 <c:if test="${cate.status == 1}">
