@@ -16,7 +16,7 @@
 
     <label for="poster1">Upload Poster:</label><br>
     <img height="150" width="200" src="" id="posterr" />
-    <input type="file" onchange="chooseFile(this)" id="poster1" name="poster1"><br>
+    <input type="file" id="poster1" name="poster1"><br>
 
     <label for="poster1">Choose Category:</label><br>
     <select name="categoryid" id="categoryid">
@@ -26,11 +26,13 @@
     </select><br>
 
     <label for="active">Active:</label><br>
+
     <input type="radio" id="activeon" name="active" value="1">
-    <label for="activeon">Hoạt động</label>
+    <label for="activeon">Hoạt động</label><br>
+
     <input type="radio" id="activeoff" name="active" value="0">
-    <label for="activeoff">Khoá</label>
-    <br>
+    <label for="activeoff">Khoá</label><br>
+
     <hr>
     <input type="submit" value="Submit">
 </form>

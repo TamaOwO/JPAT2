@@ -37,15 +37,15 @@
         </c:forEach>
     </select><br>
 
-    <label for="action">Status:</label><br>
+    <label for="active">Active:</label><br>
 
-    <input type="radio" id="actionon" name="action" value="1" ${video.action==1?'checked':''}>
-    <label for="action">Hoạt động</label><br>
+    <input type="radio" id="activeon" name="active" value="1" ${video.active==1?'checked':''}>
+    <label for="activeon">Hoạt động</label><br>
 
-    <input type="radio" id="actionoff" name="action" value="0" ${video.action==0?'checked':''}>
-    <label for="action">Khoá</label>
+    <input type="radio" id="activeoff" name="active" value="0" ${video.active==0?'checked':''}>
+    <label for="activeoff">Khoá</label>
 
-    <input type="text" id="description" name="description" value= "${video.action==0?'checked':''}"><br>
+    <input type="text" id="description" name="description" value= "${video.active==0?'checked':''}"><br>
     <label for="description">Description:</label><br>
 
     <input type="submit" value="Insert">
