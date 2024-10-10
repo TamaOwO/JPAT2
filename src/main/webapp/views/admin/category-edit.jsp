@@ -1,71 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-
-
-         pageEncoding="UTF-8"%>
-
-
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
-
-
-
-<form action="<c:url value='/admin/category/update'></c:url>" method="post"
-
-
-      enctype="multipart/form-data">
-
-
-    <input type="text" id="categoryid" name="categoryid" hidden="hidden" value="${cate.categoryId}"><br>
-
-
-    <label for="fname">Category name:</label><br>
-
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/commons/taglib.jsp" %>
+<form action="${pageContext.request.contextPath}/admin/category/update" method="post" enctype="multipart/form-data">
+    <label for="categoryid">Category Name:</label><br>
+    <input type="text" id="categoryid" name="categoryid" hidden="hidden" value="${cate.categoryid}"><br>
+    <label for="categoryname">Category Name:</label><br>
     <input type="text" id="categoryname" name="categoryname" value="${cate.categoryname}"><br>
 
+    <label for="images">Images:</label><br>
+    <input type="text" id="images" name="images"><br>
 
-    <label for="lname">Images:</label><br>
-
-
-    <c:if test="${cate.images.substring(0 , 5)=='https'}">
-
-
+    <label for="images1">Upload File:</label><br>
+    <c:if test="${cate.images.substring(0,5)=='https'}">
         <c:url value="${cate.images}" var="imgUrl"></c:url>
-
-
     </c:if>
 
-
-    <c:if test="${cate.images.substring(0 , 5)!='https'}">
-
-
-        <c:url value="/image?fname=${cate.images }" var="imgUrl"></c:url>
-
-
+    <c:if test="${cate.images.substring(0,5)!='https'}">
+        <c:url value="/image?fname=${cate.images}" var="imgUrl"></c:url>
     </c:if>
+    <img id = "imagess" height="150" width="200" src="${imgUrl}"/>
+    <input type="file" onchange="(thchooseFileis)" id="images1" name="images1" value="${cate.images}"><br><br>
 
-
-    <img id="imagess" height="150" width="200" src="${imgUrl}" />
-
-
-    <input type="file" onchange="chooseFile(this)" id="images" name="images" value="${cate.images}">
-
-
-    <p>Status:</p>
-
-
-    <input type="radio" id="ston" name="status" value="1" ${cate.status==1?'checked':'' } >
-
-
-    <label for="html">Đang hoạt động</label><br>
-
-
-    <input type="radio" id="stoff" name="status" value="0" ${cate.status!=1?'checked':'' }>
-
-
-    <label for="css">Khóa</label><br>
-
-
-    <input type="submit" value="Update">
-
-
+    <label for="status">Status:</label><br>
+    <input type="radio" id="statuson" name="status" value="1" ${cate.status==1?'checked':''}>
+    <label for="statuson">Hoạt động</label>
+    <input type="radio" id="statusoff" name="status" value="0" ${cate.status==0?'checked':''}>
+    <label for="statusoff">Khoá</label>
+    <input type="submit" value="Submit">
 </form>
