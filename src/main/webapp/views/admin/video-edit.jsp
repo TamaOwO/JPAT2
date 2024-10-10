@@ -7,9 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/commons/taglib.jsp" %>
-
-< action="${pageContext.request.contextPath}/admin/video/update" method="post" enctype="multipart/form-data">
-    <input type="text" id="videoid" name="videoid" hidden="hidden" value="${video.videoid}"><br>
+<form action="${pageContext.request.contextPath}/admin/video/update" method="post" enctype="multipart/form-data">
+    <input type="text" id="videoId" name="videoId" hidden="hidden" value="${video.videoId}"><br>
 
     <label for="title">Title:</label><br>
     <input type="text" id="title" name="title" value="${video.title}"><br>
@@ -29,6 +28,7 @@
     </c:if>
 
     <img id = "imagess" height="150" width="200" src="${imgUrl}"/>
+    <br>
 
     <label for="poster1">Choose Category:</label><br>
     <select name="categoryid" id="categoryid">
@@ -36,6 +36,9 @@
             <option value =${cate.categoryid}>${cate.categoryname}</option>
         </c:forEach>
     </select><br>
+
+    <label for="views">Views:</label><br>
+    <input type="text" id="views" name="views"><br>
 
     <label for="active">Active:</label><br>
 
@@ -45,8 +48,10 @@
     <input type="radio" id="activeoff" name="active" value="0" ${video.active==0?'checked':''}>
     <label for="activeoff">Khoá</label>
 
-    <input type="text" id="description" name="description" value= "${video.active==0?'checked':''}"><br>
+    <br>
     <label for="description">Description:</label><br>
+    <input type="text" id="description" name="description" value= "${video.description}"><br>
+
 
     <input type="submit" value="Insert">
 </form>
