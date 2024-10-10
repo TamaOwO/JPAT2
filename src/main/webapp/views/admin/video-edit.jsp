@@ -27,7 +27,7 @@
         <c:url value="/image?fname=${video.poster}" var="imgUrl"></c:url>
     </c:if>
 
-    <img id = "imagess" height="150" width="200" src="${imgUrl}"/>
+    <img id = "Hinh" height="150" width="200" src="${imgUrl}"/>
     <br>
 
     <label for="poster1">Choose Category:</label><br>

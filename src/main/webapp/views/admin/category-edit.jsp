@@ -10,6 +10,7 @@
     <input type="text" id="images" name="images"><br>
 
     <label for="images1">Upload File:</label><br>
+
     <c:if test="${cate.images.substring(0,5)=='https'}">
         <c:url value="${cate.images}" var="imgUrl"></c:url>
     </c:if>
@@ -17,8 +18,8 @@
     <c:if test="${cate.images.substring(0,5)!='https'}">
         <c:url value="/image?fname=${cate.images}" var="imgUrl"></c:url>
     </c:if>
-    <img id = "imagess" height="150" width="200" src="${imgUrl}"/>
-    <input type="file" onchange="(thchooseFileis)" id="images1" name="images1" value="${cate.images}"><br><br>
+    <img id = "Hinh" height="150" width="200" src="${imgUrl}"/>
+    <input type="file" onchange="chooseFile(this)" id="images1" name="images1" value="${cate.images}"><br><br>
 
     <label for="status">Status:</label><br>
     <input type="radio" id="statuson" name="status" value="1" ${cate.status==1?'checked':''}>

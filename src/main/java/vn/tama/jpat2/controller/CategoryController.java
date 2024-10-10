@@ -85,7 +85,7 @@ public class CategoryController extends HttpServlet {
             }
 
             try {
-                Part part = req.getPart("images");
+                Part part = req.getPart("images1");
                 if(part.getSize()>0) {
                     String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
                     //đổi tên file
@@ -117,7 +117,7 @@ public class CategoryController extends HttpServlet {
                 uploadDir.mkdir();
             }
             try {
-                Part part = req.getPart("images");
+                Part part = req.getPart("images1");
                 if(part.getSize()>0) {
                     String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
                     //đổi tên file
